@@ -42,9 +42,9 @@ way stations are placed on the track.
 
 A cross-ecosystem setup. All of these belong in the same instance:
 
-| Mod | Loader | Notes |
-|-----|--------|-------|
-| Minecraft | 1.21.1 | |
+| Mod | Loader |
+|-----|--------|
+| Minecraft | 1.21.1 |
 | [Create](https://modrinth.com/mod/create) 6.x | NeoForge |
 | [Sinytra Connector](https://modrinth.com/mod/connector) | Neoforge |
 | [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api) | Neoforge |
