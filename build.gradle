@@ -1,0 +1,64 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    // Antique Atlas + Surveyor (Sisby folk)
+    maven {
+        name = "Sleeping Town"
+        url = "https://repo.sleeping.town"
+        content {
+            includeGroup "folk.sisby"
+            includeGroup "maven.modrinth"
+        }
+    }
+    // Fallback for transitive config libs
+    maven { url = "https://maven.terraformersmc.com/releases/" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    // Antique Atlas is a Surveyor "frontend"; both are needed on the compile classpath to
+    // implement AtlasOverlay and reference AtlasRenderer / AtlasScreen.
+    modImplementation "folk.sisby:antique-atlas:${antique_atlas_version}"
+    modImplementation "folk.sisby:surveyor:${surveyor_version}"
+
+    // NOTE: Create is intentionally NOT a compile dependency. It is a NeoForge mod reached through
+    // Sinytra Connector at runtime; its synced client railway data is read via reflection
+    // (see com.atlasrailways.create.CreateRailways).
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}" }
+    }
+}

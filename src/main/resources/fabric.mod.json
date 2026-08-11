@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "atlasrailways",
+  "version": "${version}",
+  "name": "Atlas Railways (Live Trains)",
+  "description": "Draws Create train stations and railway networks onto the Antique Atlas map, plus live real-time train markers. Client-side only.",
+  "authors": [
+    "KharrlozGM"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/atlasrailways/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.atlasrailways.AtlasRailwaysCommon"
+    ],
+    "client": [
+      "com.atlasrailways.AtlasRailwaysClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "antique_atlas": "*",
+    "create": "*"
+  },
+  "suggests": {
+    "surveyor": "*"
+  }
+}
