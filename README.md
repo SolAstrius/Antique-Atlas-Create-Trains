@@ -56,7 +56,7 @@ A cross-ecosystem setup. All of these belong in the same instance:
 ```bash
 ./gradlew build
 ```
-
+ 
 The jar lands in `build/libs/`. Drop it into a Connector-enabled 1.21.1 instance alongside the mods
 in the table above.
 
