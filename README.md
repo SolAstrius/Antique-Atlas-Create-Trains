@@ -46,10 +46,10 @@ A cross-ecosystem setup. All of these belong in the same instance:
 |-----|--------|-------|
 | Minecraft | 1.21.1 | |
 | [Create](https://modrinth.com/mod/create) 6.x | NeoForge |
-| [Sinytra Connector](https://modrinth.com/mod/connector) |
-| [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api) | | Connector's Fabric API bridge |
-| [Antique Atlas](https://modrinth.com/mod/antique-atlas) 3.x (`+1.21`) | Fabric | plus its dependency, Surveyor |
-| **Atlas Railways** | Fabric | via Connector |
+| [Sinytra Connector](https://modrinth.com/mod/connector) | Neoforge |
+| [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api) | Neoforge |
+| [Antique Atlas](https://modrinth.com/mod/antique-atlas) 3.x (`+1.21`) | Fabric |
+| **Atlas Railways** | Fabric |
 
 ## Building
 
