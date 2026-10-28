@@ -10,7 +10,7 @@
   "contact": {},
   "license": "MIT",
   "icon": "assets/atlasrailways/icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "com.atlasrailways.AtlasRailwaysCommon"
